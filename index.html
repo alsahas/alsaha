@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="mystyle.css">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <link href='https://fonts.googleapis.com/css?family=Noto Naskh Arabic' rel='stylesheet'>
+
+<link rel="stylesheet" href="mystyle.css">
+<link rel="stylesheet" href="modelstyle.css">
 <script type="text/javascript" src="myscript.js"></script> 
+<script defer src="modelscript.js"></script>
+
 </head>
-<body onload="distributeCategories();">
+<body onload="distributeCategories();disableButton();">
 <!-- Simulate a smartphone / tablet look -->
+<!-- search -->
 <div id="search">
 	<img src="png/searchempty.png"width="300"height="45"style="position:relative;right:10px">
 	<input id="inputsearch" type="text" size="50px"onkeyup="distributeAll()"
-	style="font-family:Noto Naskh Arabic;font-size:20px;position:absolute;width:235px;height:23px;top:16px;left:8px;z-index:999;">
+	style="font-family:Noto Naskh Arabic;font-size:20px;position:absolute;width:243px;height:29px;top:16px;left:8px;">
 	<label id="numberitems"style="font-family:Noto Naskh Arabic;font-size:18px;color:white;position:absolute;top:18px"></label>
 </div>
 <div id="main"class="mobile-container">
@@ -23,18 +29,45 @@
 </div>
 
 <div id="page" class="page">
-	
-<p style="display:none;">بس</p>
+
+</div>	
+<p style="display:none;"></p>
 </div>
 <!-- End smartphone / tablet look -->
-<form name="form"lang="ar" action="https://formspree.io/f/xjkbyvpd"method="POST">
-    <input type="email" name="email"value="robotouta@gmail.com"style="display:none;">
+<form name="form2"lang="ar" action="https://formspree.io/f/xrbzkrvo"method="POST">
+    <input type="email" name="email"value="strategyquant12@gmail.com"style="display:none;">
 	<input type="subject"id="subject" name="subject"value=""style="display:none;">
     <textarea id="message" name="message"value=""style="display:none;"></textarea>
 </form>	
-<img id="form"type="submit"style="display:none;"onclick="getPhone()" src="png/deliver.png">
+<img data-modal-target="#modal"id="form"type="submit"style="display:none;" src="png/deliver.png">
 <p id="customername"style="display:none;"></p>
 <p id="phonenumber"style="display:none;"></p>
 <p id="address"style="display:none;"></p>
 </body>
+<div class="modal" id="modal">
+	<div class="modal-header">
+		<div style="position:absolute;right:40%;"class="title">تسجيل تفاصيل التوصيل</div>
+		<button data-close-button class="close-button">&times;</button>
+	</div>
+	<div style="float:right;"class="modal-body">
+		<h3 style="font-size:1rem;">
+			<input id="name"type="text"name="name"onblur="checkGoodName(name);checkSubmit();"style="font-size:1rem;width:60%;height:35px;">
+			&nbsp;&nbsp;الإسم الكامل
+		</h3>
+		<h3 style="font-size:1rem;">
+			<input id="phone1"type="text"name="phone1"onblur="checkGood1();checkSubmit();"onfocus="emptyPhone1()"onkeyup="checkPhone1();"
+			style="font-size:1rem;width:20%;height:35px;">
+			&nbsp;/
+			<input id="phone2"type="text"name="phone2"onblur="checkGood2();checkSubmit();"onclick="checkPhone();"onfocus="emptyPhone2();"onkeyup="checkPhone2();"
+			style="font-size:1rem;width:36.5%;height:35px;">
+			&nbsp;&nbsp;رقم التلفون
+		</h3>
+		<h3 style="font-size:1rem;">
+			<input id="address2"type="text"name="address2"onblur="checkGoodName('address2');"onkeyup="checkSubmit();"style="font-size:1rem;width:60%;height:35px;">
+			&nbsp;&nbsp;العنوان
+		</h3>
+		<button onclick="setValue();getValue();document.form2.submit();"id="button1"style="font-size:25px;position:relative;left:25%;">BUY-شراء</button>
+	</div>
+</div>
+<div id="modeloverlay"></div>
 </html>
