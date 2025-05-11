@@ -10,64 +10,7 @@
 <script defer src="modelscript.js"></script>
 
 </head>
-<body onload="window.close();distributeCategories();disableButton();">
-<!-- Simulate a smartphone / tablet look -->
-<!-- search -->
-<div id="search">
-	<img src="png/searchempty.png"width="300"height="45"style="position:relative;right:10px">
-	<input id="inputsearch" type="text" size="50px"onkeyup="distributeAll()"
-	style="font-family:Noto Naskh Arabic;font-size:20px;position:absolute;width:243px;height:29px;top:16px;left:8px;">
-	<label id="numberitems"style="font-family:Noto Naskh Arabic;font-size:18px;color:white;position:absolute;top:18px"></label>
-</div>
-<div id="main"class="mobile-container">
-<!-- Top Navigation Menu -->
-<div id="topnav"class="topnav">
-	<a id="My CART"class="active" onclick="distributeMyCart();" href="javascript:void(0);">
-	<img src="png/logo.png"width="120"height="75"><br>Bill: <b id="total">0</b> L.L.</a>
-	<div id="myCategories">
-	</div>
-</div>
-
-<div id="page" class="page">
-
-</div>	
-<p style="display:none;"></p>
-</div>
-<!-- End smartphone / tablet look -->
-<form name="form2"lang="ar" action="https://formspree.io/f/xrbzkrvo"method="POST">
-    <input type="email" name="email"value="strategyquant12@gmail.com"style="display:none;">
-	<input type="subject"id="subject" name="subject"value=""style="display:none;">
-    <textarea id="message" name="message"value=""style="display:none;"></textarea>
-</form>	
-<img data-modal-target="#modal"id="form"type="submit"style="display:none;" src="png/deliver.png">
-<p id="customername"style="display:none;"></p>
-<p id="phonenumber"style="display:none;"></p>
-<p id="address"style="display:none;"></p>
+<body>
+	<h1>Hello World</h1>
 </body>
-<div class="modal" id="modal">
-	<div class="modal-header">
-		<div style="position:absolute;right:40%;"class="title">تسجيل تفاصيل التوصيل</div>
-		<button data-close-button class="close-button">&times;</button>
-	</div>
-	<div style="float:right;"class="modal-body">
-		<h3 style="font-size:1rem;">
-			<input id="name"type="text"name="name"onblur="checkGoodName(name);checkSubmit();"style="font-size:1rem;width:60%;height:35px;">
-			&nbsp;&nbsp;الإسم الكامل
-		</h3>
-		<h3 style="font-size:1rem;">
-			<input id="phone1"type="text"name="phone1"onblur="checkGood1();checkSubmit();"onfocus="emptyPhone1()"onkeyup="checkPhone1();"
-			style="font-size:1rem;width:20%;height:35px;">
-			&nbsp;/
-			<input id="phone2"type="text"name="phone2"onblur="checkGood2();checkSubmit();"onclick="checkPhone();"onfocus="emptyPhone2();"onkeyup="checkPhone2();"
-			style="font-size:1rem;width:36.5%;height:35px;">
-			&nbsp;&nbsp;رقم التلفون
-		</h3>
-		<h3 style="font-size:1rem;">
-			<input id="address2"type="text"name="address2"onblur="checkGoodName('address2');"onkeyup="checkSubmit();"style="font-size:1rem;width:60%;height:35px;">
-			&nbsp;&nbsp;العنوان
-		</h3>
-		<button onclick="setValue();getValue();document.form2.submit();"id="button1"style="font-size:25px;position:relative;left:25%;">BUY-شراء</button>
-	</div>
-</div>
-<div id="modeloverlay"></div>
 </html>
